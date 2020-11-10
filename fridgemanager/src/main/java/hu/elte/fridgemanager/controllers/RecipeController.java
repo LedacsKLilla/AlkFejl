@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import hu.elte.fridgemanager.repositories.RecipeRepository;
 import hu.elte.fridgemanager.entities.Ingredient;
 import hu.elte.fridgemanager.repositories.IngredientRepository;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -61,7 +62,7 @@ public class RecipeController {
            return ResponseEntity.notFound().build();
        }
     }
-        
+    @Secured({ "ROLE_ADMIN" })
     @DeleteMapping("/{id}")
         public ResponseEntity<Recipe> delete (@PathVariable Integer id){
         Optional<Recipe> oRecipe =  recipeRepository.findById(id);
@@ -84,7 +85,7 @@ public class RecipeController {
            return ResponseEntity.notFound().build();
        }
     }
-     
+     @Secured({ "ROLE_USER", "ROLE_ADMIN" })
      @PostMapping("/{id}/ingredients")
      public ResponseEntity<Ingredient> addIngredient (@RequestBody Ingredient ingredient,@PathVariable Integer id){
        Optional<Recipe> oRecipe =  recipeRepository.findById(id);

@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Group {
+public class FoodGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,13 +33,13 @@ public class Group {
     
     @Column
     @Enumerated(EnumType.STRING)
-    private FoodGroup foodgroup;
+    private FoodGr foodgroup;
     
 
     @OneToMany(mappedBy = "foodg")
     private List<Recipe> recipes;
             
-    public enum FoodGroup {
+    public enum FoodGr {
     BREAKFAST, LUNCH, DINNER
     }
 }

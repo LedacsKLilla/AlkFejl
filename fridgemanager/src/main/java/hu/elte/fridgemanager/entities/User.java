@@ -34,14 +34,14 @@ public class User {
     
     @Column(nullable = false)
     private String password;
-    
+
     @Column(nullable = false)
     private boolean enabled;
-    
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
-    
+
     public enum Role {
         ROLE_GUEST, ROLE_USER, ROLE_ADMIN
     }

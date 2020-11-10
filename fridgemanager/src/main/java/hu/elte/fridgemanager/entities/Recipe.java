@@ -55,7 +55,7 @@ public class Recipe {
     @ManyToOne
     @JoinColumn
     @JsonIgnore
-    private Group foodg;
+    private FoodGroup foodg;
     
     @ManyToMany
     @JoinTable
