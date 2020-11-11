@@ -60,6 +60,11 @@ public class Recipe {
     @ManyToMany
     @JoinTable
     private List<Ingredient> ingredients;
+    
+    
+    @ManyToMany(mappedBy = "history")
+    @JsonIgnore
+    private List <UserHistory> userhistory;
 
     
 }

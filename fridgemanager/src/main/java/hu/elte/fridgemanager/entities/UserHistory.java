@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -31,6 +32,10 @@ public class UserHistory {
     
     @Column
     private String day;
+    
+    @ManyToMany
+    @JoinTable
+    private List<Recipe> history;
     
     
 

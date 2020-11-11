@@ -7,7 +7,7 @@ package hu.elte.fridgemanager;
 
 
 
-//import hu.elte.fridgemanager.entities.Recipe; does nto recognise it???
+//import hu.elte.fridgemanager.entities.Recipe; does not recognise it???
 import hu.elte.fridgemanager.entities.User; 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -61,7 +61,7 @@ public class FridgeManagerTests {
 //        headers.add("Authorization", "Bearer " + token);
         return new HttpEntity(null, headers);
     }
-    
+    /*
     @Test
     public void greetingShouldReturnDefaultMessage() throws Exception {
         System.out.println("Test 1");
@@ -76,5 +76,5 @@ public class FridgeManagerTests {
         assertThat(response.getBody()).contains("world");
     }
     
-    
+    */
 }
