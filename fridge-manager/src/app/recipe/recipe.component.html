@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <td>
+      <div class="recipies">Receptek</div>
+      <app-recipe-list
+        [recipes]="recipes"
+        (selectedRecipe)="onSelectedRecipe($event)"
+      ></app-recipe-list>
+    </td>
+
+    <td>
+      <app-recipe-detail [recipe]="recipe"></app-recipe-detail>
+    </td>
+  </tr>
+</table>

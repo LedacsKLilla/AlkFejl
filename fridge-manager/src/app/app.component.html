@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button color="secondary" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Fridge Manager</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="recipe" routerLinkActive="active">Receptek</a>
+      <a mat-list-item routerLink="new-recipe" routerLinkActive="active">Új recept</a>
+      <a mat-list-item routerLink="storage" routerLinkActive="active">Raktár</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>

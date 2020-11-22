@@ -1,0 +1,5 @@
+<mat-list role="list" *ngIf="goods">
+  <mat-list-item role="listitem" *ngFor="let good of goods">
+    {{ good.Name }}, {{ good.Quantity }} {{ good.Unit }}
+  </mat-list-item>
+</mat-list>
