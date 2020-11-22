@@ -40,8 +40,7 @@ public class Recipe {
     @Column
     private String title;
     
-    @Column
-    private Integer quantity;
+
     
     @Column
     private String description;

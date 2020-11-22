@@ -34,8 +34,6 @@ public class Fridge {
     @MapsId
     @JoinColumn(name = "ingredient")
     private Ingredient ingredientAtHome;
-     
-     @Column
-     private Integer quantity;
+    
     
 }

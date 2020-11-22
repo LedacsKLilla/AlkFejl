@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import hu.elte.fridgemanager.repositories.RecipeRepository;
 import hu.elte.fridgemanager.entities.Ingredient;
 import hu.elte.fridgemanager.repositories.IngredientRepository;
+import java.util.List;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -102,5 +103,29 @@ public class RecipeController {
        }
          
     }
+     //maybe not necessary, but just in case it needed to eb implemented
+     @Secured({"ROLE_ADMIN"})
+    @PutMapping("/{id}/ingredients")
+    public ResponseEntity<Iterable<Ingredient>> modifyIngredients(
+        @PathVariable Integer id, @RequestBody List<Ingredient> ingredients) {
+        Optional<Recipe> oRecipe = recipeRepository.findById(id);
+        if (oRecipe.isPresent()) {
+            Recipe recipe = oRecipe.get();
+            
+            for (Ingredient ingredient: ingredients) {
+                if (ingredient.getId() == null) {
+                    ingredientRepository.save(ingredient);
+                }
+            }
+            
+            recipe.setIngredients(ingredients);
+            recipeRepository.save(recipe);
+            return ResponseEntity.ok(ingredients);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
     
 }
+
+    

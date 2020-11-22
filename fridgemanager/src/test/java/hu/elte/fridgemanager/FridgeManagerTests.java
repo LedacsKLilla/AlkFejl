@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hu.elte.fridgemanager;
 
 
@@ -61,7 +56,7 @@ public class FridgeManagerTests {
 //        headers.add("Authorization", "Bearer " + token);
         return new HttpEntity(null, headers);
     }
-    /*
+
     @Test
     public void greetingShouldReturnDefaultMessage() throws Exception {
         System.out.println("Test 1");
@@ -76,5 +71,5 @@ public class FridgeManagerTests {
         assertThat(response.getBody()).contains("world");
     }
     
-    */
+    
 }

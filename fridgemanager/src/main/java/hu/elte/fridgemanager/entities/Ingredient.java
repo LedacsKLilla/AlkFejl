@@ -37,6 +37,12 @@ public class Ingredient {
     @Column
     private String ingredient;
     
+    @Column
+    private Integer quantity;
+    
+    @Column
+    private String quantityType;
+    
     @OneToOne(mappedBy = "ingredientAtHome", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Fridge fridge;
