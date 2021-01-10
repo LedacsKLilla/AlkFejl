@@ -11,6 +11,9 @@
       <a mat-list-item routerLink="recipe" routerLinkActive="active">Receptek</a>
       <a mat-list-item routerLink="new-recipe" routerLinkActive="active">Új recept</a>
       <a mat-list-item routerLink="storage" routerLinkActive="active">Raktár</a>
+      <!-- <a mat-list-item routerLink="login" routerLinkActive="active">Kilépés</a> -->
+      <a *ngIf="isLoggedIn" mat-button (click)="logout()">Kilépés</a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>

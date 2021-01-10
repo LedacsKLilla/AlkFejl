@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient, unitEnum } from '../ingredient';
+import { Ingredient, unitEnum } from '../core/ingredient';
 
 @Component({
   selector: 'app-storage',

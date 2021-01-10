@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-new-recipe',
   templateUrl: './new-recipe.component.html',
-  styleUrls: ['./new-recipe.component.scss']
+  styleUrls: ['./new-recipe.component.scss'],
 })
 export class NewRecipeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
