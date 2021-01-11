@@ -57,7 +57,7 @@ export class RecipeComponent implements OnInit {
       ],
       Preparation:
         'Curabitur feugiat cursus orci, a rhoncus ligula dignissim vehicula. Cras et tellus varius erat malesuada malesuada in eu sem. Vestibulum nunc metus, malesuada nec posuere eu, cursus vel mi. Sed vehicula, metus et rhoncus hendrerit, sapien sem consequat diam, vel pharetra diam felis quis diam. Phasellus bibendum pharetra magna, ac molestie risus tincidunt vitae. Vivamus aliquet vel lorem in dapibus. Donec ornare blandit consectetur. Ut id imperdiet erat, sit amet varius est.',
-      ImagePath: "https://via.placeholder.com/400",
+      ImagePath: "https://via.placeholder.com/350",
     },
 
     {
