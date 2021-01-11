@@ -2,7 +2,7 @@ package hu.elte.fridgemanager;
 
 
 
-//import hu.elte.fridgemanager.entities.Recipe; does not recognise it???
+import hu.elte.fridgemanager.entities.Recipe;
 import hu.elte.fridgemanager.entities.User; 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -53,11 +53,11 @@ public class FridgeManagerTests {
         
         HttpHeaders headers = new HttpHeaders();
         headers.add("Cookie", "token=" + token);
-//        headers.add("Authorization", "Bearer " + token);
         return new HttpEntity(null, headers);
     }
 
-    @Test
+
+	    @Test
     public void greetingShouldReturnDefaultMessage() throws Exception {
         System.out.println("Test 1");
         HttpEntity requestEntity = getRequestEntityForUser("user", "user");
@@ -70,6 +70,13 @@ public class FridgeManagerTests {
         
         assertThat(response.getBody()).contains("world");
     }
+    @Test
+    public void getAll() throws Exception{
+        ResponseEntity<List<Recipe>> response = restTemplate.exchange("http://localhost:" + port + "/recipe",
+                    HttpMethod.GET,null,new ParameterizedTypeReference<List<Recipe>>() {});
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+                
+        }
     
     
 }

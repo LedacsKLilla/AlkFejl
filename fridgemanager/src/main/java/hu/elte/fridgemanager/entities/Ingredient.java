@@ -41,10 +41,11 @@ public class Ingredient {
     private Integer quantity;
     
     @Column
-    private String quantityType;
+    private String quantitytype;
     
-    @OneToOne(mappedBy = "ingredientAtHome", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "ingredientathome",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
+    @JsonIgnore
     private Fridge fridge;
     
     @ManyToMany(mappedBy = "ingredients")

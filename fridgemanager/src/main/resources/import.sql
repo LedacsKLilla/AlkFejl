@@ -3,21 +3,20 @@ insert into user (username, password, enabled, role) values ('admin', '$2a$10$Xt
 insert into user (username, password, enabled, role) values ('user', '$2a$10$QUhsliTs8Ufe9nSQgIwzzeDktWOdDw8WY77lN.3AAXL5vVDI2EoVO', true, 'ROLE_USER');
 -- password: user
 
-insert into Recipe (title,  quantity, description) values ('Spagetti',10,'nincs');
-insert into Recipe (title,  quantity, description) values ('Shuffle',10,'nincs');
-insert into Ingredient (ingredient) values ('Apple', 5, "pieces");
-insert into Ingredient (ingredient) values ('Pasta', 2, "packets");
-insert into Ingredient (ingredient) values ('Tomato Sauce', 3, "cans");
-insert into Ingredient (ingredient) values ('Parmesan', 250, "g");
-insert into Ingredient (ingredient) values ('Raspberry', 40, "dkg");
-insert into Ingredient (ingredient) values ('Pork', 500, "g");
+insert into Recipe (title,   description) values ('Spagetti','nincs');
+insert into Recipe (title,   description) values ('Souffle','nincs');
+insert into Ingredient (ingredient,quantitytype, quantity) values ('Apple', 'pieces',5);
+insert into Ingredient (ingredient,quantity) values ('Pasta', 2);
+insert into Ingredient (ingredient,quantity) values ('Tomato Sauce', 3);
+insert into Ingredient (ingredient,quantity) values ('Parmesan', 250);
+insert into Ingredient (ingredient,quantity) values ('Raspberry', 40);
+insert into Ingredient (ingredient,quantity) values ('Pork', 500);
 
 
 insert into recipe_ingredients(recipe_id, ingredients_id) values (1,2);
 insert into recipe_ingredients(recipe_id, ingredients_id) values (1,3);
 insert into recipe_ingredients(recipe_id, ingredients_id) values (2,4);
-insert into Fridge(ingredients_id) values (5);
-insert into Fridge(ingredients_id) values (6);
+
 
 
 insert into User_History (day) values ('Monday');
